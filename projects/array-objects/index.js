@@ -24,7 +24,15 @@ function forEach(array, fn) {
  Пример:
    map([1, 2, 3], (el) => el ** 2) // [1, 4, 9]
  */
-function map(array, fn) {}
+function map(array, fn) {
+  const modified = [];
+
+  for (let i = 0; i < array.length; i++) {
+    modified[i] = fn(array[i], i, array);
+  }
+
+  return modified;
+}
 
 /*
  Задание 3:
