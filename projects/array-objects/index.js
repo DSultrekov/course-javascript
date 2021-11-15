@@ -50,6 +50,8 @@ function reduce(array, fn, initial) {
   for (let i = hasInitial ? 0 : 1; i < array.length; i++) {
     prev = fn(prev, array[i], i, array);
   }
+
+  return prev;
 }
 
 /*
