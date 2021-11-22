@@ -228,7 +228,7 @@ function observeChildNodes(where, fn) {
         fn({
           type: mutation.addedNodes.length ? 'insert' : 'remove',
           nodes: [
-            ...(mutation.addedNodes.length ? mutation.addedNodes : mutation.removeNodes),
+            ...(mutation.addedNodes.length ? mutation.addedNodes : mutation.removedNodes),
           ],
         });
       }
