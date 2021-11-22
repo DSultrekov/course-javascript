@@ -98,7 +98,16 @@ function findError(where) {
    После выполнения функции, дерево <div></div>привет<p></p>loftchool!!!
    должно быть преобразовано в <div></div><p></p>
  */
-function deleteTextNodes(where) {}
+function deleteTextNodes(where) {
+  for (let i = 0; i < where.childNodes.length; i++) {
+    const el = where.childNodes[i];
+
+    if (el.nodeType === Element.TEXT_NODE) {
+      where.removeChild(el);
+      i--;
+    }
+  }
+}
 
 /*
  Задание 6:
