@@ -29,8 +29,8 @@
    homeworkContainer.appendChild(newDiv);
  */
 
-import './towns.html';
 import { loadAndSortTowns } from './functions.js';
+import './towns.html';
 
 const homeworkContainer = document.querySelector('#app');
 
@@ -90,6 +90,7 @@ async function tryToLoad() {
     towns = await loadTowns();
     loadingBlock.classList.add('hidden');
     loadingFailedBlock.classList.remove('hidden');
+    filterBlock.classList.remove('hidden');
   } catch (e) {
     loadingBlock.classList.add('hidden');
     loadingFailedBlock.classList.remove('hidden');
