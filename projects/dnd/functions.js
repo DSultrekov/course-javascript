@@ -59,7 +59,13 @@ function emulateClick(target) {
  Пример:
    delegate(document.body, () => console.log('кликнули на button')) // добавит такой обработчик кликов для body, который будет вызывать указанную функцию только если кликнули на кнопку (элемент с тегом button)
  */
-function delegate(target, fn) {}
+function delegate(target, fn) {
+  target.addEventListener('click', (e) => {
+    if (e.target.tagName === 'BUTTON') {
+      fn();
+    }
+  });
+}
 
 /*
  Задание 7:
